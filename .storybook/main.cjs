@@ -3,6 +3,7 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@sotybook/addon-a11y",
     "@storybook/addon-interactions",
   ],
   framework: "@storybook/react",
@@ -11,12 +12,14 @@ module.exports = {
   },
   features: {
     storyStoreV7: true,
+    interactionsDebugger: true,
   },
+  staticDirs: ["../public"],
   viteFinal: (config, { configType }) => {
     if (configType === "PRODUCTION") {
       config.base = "/lab-ds/";
     }
 
-    return config
+    return config;
   },
 };
